@@ -27,8 +27,11 @@ public class PlayerController : MonoBehaviour {
 
 	private float nextFire;
 
-	void Update () {
-		if (Input.GetButton ("Fire1") && Time.time > nextFire) {
+	// handles the shots in front of the ship.
+	void Update () 
+	{
+		if (Input.GetButton ("Fire1") && Time.time > nextFire) 
+		{
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation); //as GameObject;
 		}
